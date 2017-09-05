@@ -1,0 +1,12 @@
+<div class="zoom">
+    <ul>
+        <li class="zoom-in" (click)="changeRange(selectedRange + 5)">+</li>
+        <li class="zoom-slide">
+            <input class="hidden-input" type="range" min="50" max="200" value="100" [ngModel]="selectedRange" (ngModelChange)="changeRange($event)">
+            <div class="slide-marker" [style.width]="selectedRangeMarker + '%' || '0%'"></div>
+        </li>
+        <li class="zoom-out" (click)="changeRange(selectedRange - 5)">-</li>
+    </ul>
+    <!--VISUALISATION-->
+    <p class="current-zoom">Current Zoom: x{{selectedRange / 100}}</p>
+</div>

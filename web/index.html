@@ -20,7 +20,7 @@
             background-color: #CEE3F6;
         }
 
-        .shape {
+        .shape-to-zoom {
             display: block;
             width: 100px;
             height: 100px;
@@ -58,6 +58,7 @@
             text-align: center;
             color: #4EAEF6;
             cursor: pointer;
+            user-select: none;
         }
 
         .zoom-in {
@@ -69,7 +70,7 @@
         }
 
         .zoom-slide {
-            width: calc(100% - 48px);
+            width: calc(100% - 54px);
             left: 24px;
         }
 
@@ -94,11 +95,40 @@
             cursor: pointer;
             top: 50%;
             margin-top: -5px;
+            margin-left: 2px;
         }
 
-        .slide-marker:hover {
-            transform: scale(1.1);
-            transition: transform 0.2s ease-out;
+        /**
+        This rule may disturb the user while sliding
+        /*.slide-marker:hover {*/
+            /*transform: scale(1.1);*/
+            /*transition: transform 0.2s ease-out;*/
+        /*}*/
+        .slide-marker:after {
+            content: " ";
+            width: 6px;
+            height: 14px;
+            background-color: #ccc;
+            position: absolute;
+            right: -5px;
+            top: -2px;
+            border: 1px solid #bbb;
+            border-bottom-radius: 2px;
+        }
+        .hidden-input {
+            width: calc(100% + 6px); // 6px is the width of slide marker
+            height: 15px;
+            position: absolute;
+            cursor: pointer;
+            z-index: 1;
+            left: -2px;
+            opacity: 0; // to visually hide the input
+        }
+        /**
+        styles for visualisation
+         */
+        .current-zoom {
+            margin-top: 25px;
         }
     </style>
 </head>

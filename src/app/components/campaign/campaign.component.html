@@ -1,12 +1,7 @@
+<!--My point is to use hidden input with type range. I use new component ZoomComponent to achieve it.
+The only clause is that zoom component should be a sibling to the shape desired to zoom and we should pass it's selector in it -->
+
 <div class="canvas">
-    <div class="shape"></div>
-    <div class="zoom">
-        <ul>
-            <li class="zoom-in">+</li>
-            <li class="zoom-slide">
-                <div class="slide-marker"></div>
-            </li>
-            <li class="zoom-out">-</li>
-        </ul>
-    </div>
+    <div class="shape-to-zoom"></div>
+    <zoom zoomSelector=".shape-to-zoom"></zoom>
 </div>
